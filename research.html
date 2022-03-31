@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Nello Blaser - research</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Nello Blaser</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="students.html">Students</a>
+</li>
+<li>
+  <a href="news.html">News</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://www.uib.no/personer/Nello.Blaser">
+    <span class="fa fa-envelope fa"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/blasern">
+    <span class="fa fa-github fa"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://orcid.org/0000-0001-9489-1657">
+    <span class="fa fa-id-badge fa"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://scholar.google.com/citations?user=xkn66FYAAAAJ&amp;hl=no&amp;oi=ao">
+    <span class="fa fa-graduation-cap fa"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<p>My current research is mainly focused on topological and geometric machine learning and its application. Previously I have worked on topics ranging from epidemiology, toxicology and geopyhsics to statistics and topological data analysis. Below you find a list of publications.</p>
+<!-- <embed src="https://orcid.org/0000-0001-9489-1657" style="width:100%; height:80vh"> -->
+<div id="refs" class="references csl-bib-body">
+<div id="ref-gerd2021_COVID" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">G. H. Bringeland, N. Blaser, K.-M. Myhr, C. A. Vedeler, and S. Gavasso, <span>“Wearing-off symptoms during standard and extended natalizumab dosing intervals: Experiences from the COVID-19 pandemic,”</span> <em>Journal of the Neurological Sciences</em>, p. 117622, 2021, doi: <a href="https://doi.org/10.1016/j.jns.2021.117622">https://doi.org/10.1016/j.jns.2021.117622</a>.</div>
+</div>
+<div id="ref-galmiche2021" class="csl-entry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">N. Galmiche, H. Hauser, T. Spengler, C. Spensberger, M. Brun, and N. Blaser, <span>“<span class="nocase">Revealing Multimodality in Ensemble Weather Prediction</span>,”</span> in <em>Machine learning methods in visualisation for big data</em>, 2021, doi: <a href="https://doi.org/10.2312/mlvis.20211073">10.2312/mlvis.20211073</a>.</div>
+</div>
+<div id="ref-gundersen2021_SCVAE" class="csl-entry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">K. Gundersen, A. Oleynik, N. Blaser, and G. Alendal, <span>“Semi-conditional variational auto-encoder for flow reconstruction and uncertainty quantification from limited observations,”</span> <em>Physics of Fluids</em>, vol. 33, no. 1, p. 017119, 2021, doi: <a href="https://doi.org/10.1063/5.0025779">10.1063/5.0025779</a>.</div>
+</div>
+<div id="ref-blaser2020_validation101" class="csl-entry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">N. Blaser and M. Aupetit, <span>“Research directions to validate topological models of multi-dimensional data,”</span> 2020, [Online]. Available: <a href="https://openreview.net/references/pdf?id=amu4diB8yU">https://openreview.net/references/pdf?id=amu4diB8yU</a>.</div>
+</div>
+<div id="ref-gundersen2020_BNN" class="csl-entry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">K. Gundersen, G. Alendal, A. Oleynik, and N. Blaser, <span>“Binary time series classification with bayesian convolutional neural networks when monitoring for marine gas discharges,”</span> <em>Algorithms</em>, vol. 13, p. 145, Jun. 2020, doi: <a href="https://doi.org/10.3390/a13060145">10.3390/a13060145</a>.</div>
+</div>
+<div id="ref-blaser2020_relative" class="csl-entry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">N. Blaser and M. Brun, <span>“<span>Relative Persistent Homology</span>,”</span> in <em>36th international symposium on computational geometry (SoCG 2020)</em>, 2020, vol. 164, pp. 18:1–18:10, doi: <a href="https://doi.org/10.4230/LIPIcs.SoCG.2020.18">10.4230/LIPIcs.SoCG.2020.18</a>.</div>
+</div>
+<div id="ref-Oleynik2020" class="csl-entry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">A. Oleynik, M. I. García-Ibáñez, N. Blaser, A. Omar, and G. Alendal, <span>“Optimal sensors placement for detecting <span>CO2</span> discharges from unknown locations on the seafloor,”</span> <em>International Journal of Greenhouse Gas Control</em>, vol. 95, p. 102951, 2020, doi: <a href="https://doi.org/10.1016/j.ijggc.2019.102951">10.1016/j.ijggc.2019.102951</a>.</div>
+</div>
+<div id="ref-Bringelande2020_WO" class="csl-entry">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">G. H. Bringeland, N. Blaser, K.-M. Myhr, C. A. Vedeler, and S. Gavasso, <span>“Wearing-off at the end of natalizumab dosing intervals is associated with low receptor occupancy,”</span> <em>Neurology - Neuroimmunology Neuroinflammation</em>, vol. 7, no. 3, 2020, doi: <a href="https://doi.org/10.1212/NXI.0000000000000678">10.1212/NXI.0000000000000678</a>.</div>
+</div>
+<div id="ref-blaser2019_applied" class="csl-entry">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">N. Blaser and M. Brun, <span>“Sparse nerves in practice,”</span> in <em>Machine learning and knowledge extraction</em>, 2019, pp. 272–284, doi: <a href="https://doi.org/10.1007/978-3-030-29726-8_17">10.1007/978-3-030-29726-8_17</a>.</div>
+</div>
+<div id="ref-Bader_2019_RA" class="csl-entry">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">L. Bader <em>et al.</em>, <span>“Candidate markers for stratification and classification in rheumatoid arthritis,”</span> <em>Frontiers in Immunology</em>, vol. 10, p. 1488, 2019, doi: <a href="https://doi.org/10.3389/fimmu.2019.01488">10.3389/fimmu.2019.01488</a>.</div>
+</div>
+<div id="ref-brun2019_sparse" class="csl-entry">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">M. Brun and N. Blaser, <span>“Sparse dowker nerves,”</span> <em>Journal of Applied and Computational Topology</em>, pp. 1–28, 2019, doi: <a href="https://doi.org/10.1007/s41468-019-00028-9">10.1007/s41468-019-00028-9</a>.</div>
+</div>
+<div id="ref-Karina_kollevaag" class="csl-entry">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">K. Dale <em>et al.</em>, <span>“Contaminant accumulation and biological responses in atlantic cod (gadus morhua) caged at a capped waste disposal site in kollevåg, western norway,”</span> <em>Marine Environmental Research</em>, 2019, doi: <a href="https://doi.org/10.1016/j.marenvres.2019.02.003">10.1016/j.marenvres.2019.02.003</a>.</div>
+</div>
+<div id="ref-Gerd_2019_RO" class="csl-entry">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">G. H. Bringeland <em>et al.</em>, <span>“Optimization of receptor occupancy assays in mass cytometry: Standardization across channels with <span>QSC</span> beads,”</span> <em>Cytometry Part A</em>, 2019, doi: <a href="https://doi.org/10.1002/cyto.a.23723">10.1002/cyto.a.23723</a>.</div>
+</div>
+<div id="ref-kareem_2018" class="csl-entry">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">K. E. M. Ahmed <em>et al.</em>, <span>“An <span>LC-MS/MS</span> approach to reveal the effects of <span>POP</span>s and endocrine disruptors on the steroidogenesis of the human <span>H295R</span> adrenocortical cell line,”</span> <em>Chemosphere</em>, 2019, doi: <a href="https://doi.org/10.1016/j.chemosphere.2018.11.057">10.1016/j.chemosphere.2018.11.057</a>.</div>
+</div>
+<div id="ref-froysa_2018_model_reduction" class="csl-entry">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">H. G. Frøysa, S. Fallahi, and N. Blaser, <span>“Evaluating model reduction under parameter uncertainty,”</span> <em>BMC Systems Biology</em>, vol. 12, no. 1, p. 79, 2018, doi: <a href="https://doi.org/10.1186/s12918-018-0602-x">10.1186/s12918-018-0602-x</a>.</div>
+</div>
+<div id="ref-blaser_2018_dc" class="csl-entry">
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">N. Blaser and M. Brun, <span>“Divisive cover,”</span> <em>Mathematics in Computer Science</em>, vol. 13, no. 1, pp. 21–29, 2019, doi: <a href="https://doi.org/10.1007/s11786-018-0352-6">10.1007/s11786-018-0352-6</a>.</div>
+</div>
+<div id="ref-yadetie_2018_EE2_BaP" class="csl-entry">
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">F. Yadetie <em>et al.</em>, <span>“<span>RNA</span>-seq analysis of transcriptome responses in atlantic cod (gadus morhua) precision-cut liver slices exposed to benzo[a]pyrene and 17-<span><span></span></span>-ethynylestradiol,”</span> <em>Aquatic Toxicology</em>, vol. 201, pp. 174–186, 2018, doi: <a href="https://doi.org/10.1016/j.aquatox.2018.06.003">10.1016/j.aquatox.2018.06.003</a>.</div>
+</div>
+<div id="ref-estill_2018_transmission_malawi" class="csl-entry">
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">J. Estill <em>et al.</em>, <span>“The effect of monitoring viral load and tracing patients lost to follow-up on the course of the HIV epidemic in malawi: A mathematical model,”</span> <em>Open Forum Infectious Diseases</em>, vol. 5, no. 5, p. ofy092, 2018, doi: <a href="https://doi.org/10.1093/ofid/ofy092">10.1093/ofid/ofy092</a>.</div>
+</div>
+<div id="ref-blaser2017_ac" class="csl-entry">
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">N. Blaser <em>et al.</em>, <span>“<span>I</span>mpact of screening and <span>A</span><span>R</span><span>T</span> on anal cancer incidence in <span>H</span><span>I</span><span>V</span>-positive men who have sex with men: Mathematical modeling study,”</span> <em><span>AIDS</span></em>, 2017, doi: <a href="https://doi.org/10.1097/QAD.0000000000001546">10.1097/QAD.0000000000001546</a>.</div>
+</div>
+<div id="ref-estill2016_2nd" class="csl-entry">
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">J. Estill <em>et al.</em>, <span>“Estimating the need of second-line antiretroviral therapy in sub-<span>S</span>aharan <span>A</span>frica up to 2030: A mathematical model,”</span> <em><span>The Lancet HIV</span></em>, vol. 3, no. 3, pp. e132–e139, 2016, doi: <a href="https://doi.org/10.1016/S2352-3018(16)00016-3">10.1016/S2352-3018(16)00016-3</a>.</div>
+</div>
+<div id="ref-blaser2016_tb" class="csl-entry">
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">N. Blaser <em>et al.</em>, <span>“Tuberculosis in cape town: An age-structured transmission model,”</span> <em><span>Epidemics</span></em>, vol. 14, pp. 54–61, 2016, doi: <a href="https://doi.org/10.1016/j.epidem.2015.10.001">10.1016/j.epidem.2015.10.001</a>.</div>
+</div>
+<div id="ref-estill2015" class="csl-entry">
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">J. Estill, L. Salazar-Vizcaya, N. Blaser, M. Egger, and O. Keiser, <span>“The <span>Cost</span>-<span>Effectiveness</span> of <span>Monitoring</span> <span>Strategies</span> for <span>Antiretroviral</span> <span>Therapy</span> of <span>HIV</span> <span>Infected</span> <span>Patients</span> in <span>Resource</span>-<span>Limited</span> <span>Settings</span>: <span>Software</span> <span>Tool</span>,”</span> <em><span>PLoS ONE</span></em>, vol. 10, no. 3, p. e0119299, 2015, doi: <a href="https://doi.org/10.1371/journal.pone.0119299">10.1371/journal.pone.0119299</a>.</div>
+</div>
+<div id="ref-blaser2015_gems" class="csl-entry">
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">N. Blaser <em>et al.</em>, <span>“<span class="nocase">gems</span>: An <span>R</span> package for simulating from disease progression models,”</span> <em><span>Journal of Statistical Software</span></em>, vol. 64, no. 10, pp. 1–22, 2015, doi: <a href="https://doi.org/10.18637/jss.v064.i10">10.18637/jss.v064.i10</a>.</div>
+</div>
+<div id="ref-salazar-vizcaya_viral_2014" class="csl-entry">
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">L. Salazar-Vizcaya <em>et al.</em>, <span>“Viral load versus <span>CD</span><span class="math inline">\(4^{+}\)</span> monitoring and 5-year outcomes of antiretroviral therapy in <span>HIV</span>-positive children in <span>Southern Africa</span>: A cohort-based modelling study,”</span> <em><span>AIDS</span></em>, vol. 28, no. 16, pp. 2451–2460, 2014, doi: <a href="https://doi.org/10.1097/QAD.0000000000000446">10.1097/QAD.0000000000000446</a>.</div>
+</div>
+<div id="ref-petersen2014" class="csl-entry">
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">M. Petersen, J. Schwab, S. Gruber, N. Blaser, M. Schomaker, and M. van der Laan, <span>“Targeted maximum likelihood estimation for dynamic and static longitudinal marginal structural working models,”</span> <em><span>Journal of Causal Inference</span></em>, vol. 2, no. 2, pp. 147–185, 2014, doi: <a href="https://doi.org/10.1515/jci-2013-0007">10.1515/jci-2013-0007</a>.</div>
+</div>
+<div id="ref-blaser2014_vl" class="csl-entry">
+<div class="csl-left-margin">[26] </div><div class="csl-right-inline">N. Blaser <em>et al.</em>, <span>“Impact of viral load and the duration of primary infection on <span>HIV</span> transmission: Systematic review and meta-analysis,”</span> <em><span>AIDS</span></em>, vol. 28, no. 7, pp. 1021–1029, 2014, doi: <a href="https://doi.org/10.1097/QAD.0000000000000135">10.1097/QAD.0000000000000135</a>.</div>
+</div>
+<div id="ref-estill2014_tracing" class="csl-entry">
+<div class="csl-left-margin">[27] </div><div class="csl-right-inline">J. Estill <em>et al.</em>, <span>“Tracing of patients lost to follow-up and <span>HIV</span> transmission: Mathematical modeling study based on 2 large <span>ART</span> programs in <span>Malawi</span>,”</span> <em><span>Journal of acquired immune deficiency syndromes</span></em>, vol. 65, no. 5, pp. e179–186, 2014, doi: <a href="https://doi.org/10.1097/QAI.0000000000000075">10.1097/QAI.0000000000000075</a>.</div>
+</div>
+<div id="ref-keebler2014" class="csl-entry">
+<div class="csl-left-margin">[28] </div><div class="csl-right-inline">D. Keebler <em>et al.</em>, <span>“Cost-effectiveness of different strategies to monitor adults on antiretroviral treatment: A combined analysis of three mathematical models,”</span> <em><span>The Lancet Global Health</span></em>, vol. 2, no. 1, pp. e35–e43, 2014, doi: <a href="https://doi.org/10.1016/S2214-109X(13)70048-2">10.1016/S2214-109X(13)70048-2</a>.</div>
+</div>
+<div id="ref-estill2013_cost" class="csl-entry">
+<div class="csl-left-margin">[29] </div><div class="csl-right-inline">J. Estill <em>et al.</em>, <span>“Cost-effectiveness of point-of-care viral load monitoring of antiretroviral therapy in resource-limited settings: Mathematical modelling study,”</span> <em><span>AIDS</span></em>, vol. 27, no. 9, pp. 1483–1492, 2013, doi: <a href="https://doi.org/10.1097/QAD.0b013e328360a4e5">10.1097/QAD.0b013e328360a4e5</a>.</div>
+</div>
+<div id="ref-wettstein2012" class="csl-entry">
+<div class="csl-left-margin">[30] </div><div class="csl-right-inline">C. Wettstein <em>et al.</em>, <span>“Missed opportunities to prevent mother-to-child-transmission: Systematic review and meta-analysis,”</span> <em><span>AIDS</span></em>, vol. 26, no. 18, pp. 2361–2373, 2012, doi: <a href="https://doi.org/10.1097/QAD.0b013e328359ab0c">10.1097/QAD.0b013e328359ab0c</a>.</div>
+</div>
+</div>
+
+<script type="text/javascript" src="links.js"></script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
