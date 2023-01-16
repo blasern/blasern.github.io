@@ -13,8 +13,7 @@
 
 <title>Nello Blaser - research</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -58,28 +57,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-/* for pandoc --citeproc since 2.11 */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -105,6 +83,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -162,11 +143,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -195,8 +180,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -204,16 +189,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -257,7 +235,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -334,105 +312,105 @@ $(document).ready(function () {
 <h2>Publications</h2>
 <p>Below you find a list of publications.</p>
 <!-- <embed src="https://orcid.org/0000-0001-9489-1657" style="width:100%; height:80vh"> -->
-<div id="refs" class="references csl-bib-body">
-<div id="ref-mayala2022" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">S. Mayala <em>et al.</em>, <span>“GUBS: Graph-based unsupervised brain segmentation in MRI images,”</span> <em>Journal of Imaging</em>, vol. 8, no. 10, 2022, doi: <a href="https://doi.org/10.3390/jimaging8100262">10.3390/jimaging8100262</a>.</div>
+<div id="refs" class="references">
+<div id="ref-mayala2022">
+<p>[1] S. Mayala <em>et al.</em>, “GUBS: Graph-based unsupervised brain segmentation in mri images,” <em>Journal of Imaging</em>, vol. 8, no. 10, 2022, doi: <a href="https://doi.org/10.3390/jimaging8100262">10.3390/jimaging8100262</a>.</p>
 </div>
-<div id="ref-blaser2022_relative" class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">N. Blaser and M. Brun, <span>“<span>Relative Persistent Homology</span>,”</span> <em><span>Discrete &amp; Computational Geometry</span></em>, 2022, doi: <a href="https://doi.org/10.1007/s00454-022-00421-9">10.1007/s00454-022-00421-9</a>.</div>
+<div id="ref-blaser2022_relative">
+<p>[2] N. Blaser and M. Brun, “Relative Persistent Homology,” <em>Discrete &amp; Computational Geometry</em>, 2022, doi: <a href="https://doi.org/10.1007/s00454-022-00421-9">10.1007/s00454-022-00421-9</a>.</p>
 </div>
-<div id="ref-black2022_surfaces" class="csl-entry">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">M. Black, N. Blaser, A. Nayyeri, and E. R. Vågset, <span>“<span class="nocase">ETH-Tight Algorithms for Finding Surfaces in Simplicial Complexes of Bounded Treewidth</span>,”</span> in <em>38th international symposium on computational geometry (SoCG 2022)</em>, 2022, vol. 224, pp. 17:1–17:16, doi: <a href="https://doi.org/10.4230/LIPIcs.SoCG.2022.17">10.4230/LIPIcs.SoCG.2022.17</a>.</div>
+<div id="ref-black2022_surfaces">
+<p>[3] M. Black, N. Blaser, A. Nayyeri, and E. R. Vågset, “ETH-Tight Algorithms for Finding Surfaces in Simplicial Complexes of Bounded Treewidth,” in <em>38th international symposium on computational geometry (socg 2022)</em>, 2022, vol. 224, pp. 17:1–17:16, doi: <a href="https://doi.org/10.4230/LIPIcs.SoCG.2022.17">10.4230/LIPIcs.SoCG.2022.17</a>.</p>
 </div>
-<div id="ref-gerd2021_COVID" class="csl-entry">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">G. H. Bringeland, N. Blaser, K.-M. Myhr, C. A. Vedeler, and S. Gavasso, <span>“Wearing-off symptoms during standard and extended natalizumab dosing intervals: Experiences from the COVID-19 pandemic,”</span> <em>Journal of the Neurological Sciences</em>, p. 117622, 2021, doi: <a href="https://doi.org/10.1016/j.jns.2021.117622">10.1016/j.jns.2021.117622</a>.</div>
+<div id="ref-gerd2021_COVID">
+<p>[4] G. H. Bringeland, N. Blaser, K.-M. Myhr, C. A. Vedeler, and S. Gavasso, “Wearing-off symptoms during standard and extended natalizumab dosing intervals: Experiences from the covid-19 pandemic,” <em>Journal of the Neurological Sciences</em>, p. 117622, 2021, doi: <a href="https://doi.org/10.1016/j.jns.2021.117622">10.1016/j.jns.2021.117622</a>.</p>
 </div>
-<div id="ref-galmiche2021" class="csl-entry">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">N. Galmiche, H. Hauser, T. Spengler, C. Spensberger, M. Brun, and N. Blaser, <span>“<span class="nocase">Revealing Multimodality in Ensemble Weather Prediction</span>,”</span> in <em>Machine learning methods in visualisation for big data</em>, 2021, doi: <a href="https://doi.org/10.2312/mlvis.20211073">10.2312/mlvis.20211073</a>.</div>
+<div id="ref-galmiche2021">
+<p>[5] N. Galmiche, H. Hauser, T. Spengler, C. Spensberger, M. Brun, and N. Blaser, “Revealing Multimodality in Ensemble Weather Prediction,” in <em>Machine learning methods in visualisation for big data</em>, 2021, doi: <a href="https://doi.org/10.2312/mlvis.20211073">10.2312/mlvis.20211073</a>.</p>
 </div>
-<div id="ref-gundersen2021_SCVAE" class="csl-entry">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">K. Gundersen, A. Oleynik, N. Blaser, and G. Alendal, <span>“Semi-conditional variational auto-encoder for flow reconstruction and uncertainty quantification from limited observations,”</span> <em>Physics of Fluids</em>, vol. 33, no. 1, p. 017119, 2021, doi: <a href="https://doi.org/10.1063/5.0025779">10.1063/5.0025779</a>.</div>
+<div id="ref-gundersen2021_SCVAE">
+<p>[6] K. Gundersen, A. Oleynik, N. Blaser, and G. Alendal, “Semi-conditional variational auto-encoder for flow reconstruction and uncertainty quantification from limited observations,” <em>Physics of Fluids</em>, vol. 33, no. 1, p. 017119, 2021, doi: <a href="https://doi.org/10.1063/5.0025779">10.1063/5.0025779</a>.</p>
 </div>
-<div id="ref-blaser2020_validation101" class="csl-entry">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">N. Blaser and M. Aupetit, <span>“Research directions to validate topological models of multi-dimensional data,”</span> 2020, [Online]. Available: <a href="https://openreview.net/references/pdf?id=amu4diB8yU">https://openreview.net/references/pdf?id=amu4diB8yU</a>.</div>
+<div id="ref-blaser2020_validation101">
+<p>[7] N. Blaser and M. Aupetit, “Research directions to validate topological models of multi-dimensional data,” 2020, [Online]. Available: <a href="https://openreview.net/references/pdf?id=amu4diB8yU">https://openreview.net/references/pdf?id=amu4diB8yU</a>.</p>
 </div>
-<div id="ref-gundersen2020_BNN" class="csl-entry">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">K. Gundersen, G. Alendal, A. Oleynik, and N. Blaser, <span>“Binary time series classification with bayesian convolutional neural networks when monitoring for marine gas discharges,”</span> <em>Algorithms</em>, vol. 13, p. 145, Jun. 2020, doi: <a href="https://doi.org/10.3390/a13060145">10.3390/a13060145</a>.</div>
+<div id="ref-gundersen2020_BNN">
+<p>[8] K. Gundersen, G. Alendal, A. Oleynik, and N. Blaser, “Binary time series classification with bayesian convolutional neural networks when monitoring for marine gas discharges,” <em>Algorithms</em>, vol. 13, p. 145, Jun. 2020, doi: <a href="https://doi.org/10.3390/a13060145">10.3390/a13060145</a>.</p>
 </div>
-<div id="ref-blaser2020_relative" class="csl-entry">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">N. Blaser and M. Brun, <span>“<span>Relative Persistent Homology</span>,”</span> in <em>36th international symposium on computational geometry (SoCG 2020)</em>, 2020, vol. 164, pp. 18:1–18:10, doi: <a href="https://doi.org/10.4230/LIPIcs.SoCG.2020.18">10.4230/LIPIcs.SoCG.2020.18</a>.</div>
+<div id="ref-blaser2020_relative">
+<p>[9] N. Blaser and M. Brun, “Relative Persistent Homology,” in <em>36th international symposium on computational geometry (socg 2020)</em>, 2020, vol. 164, pp. 18:1–18:10, doi: <a href="https://doi.org/10.4230/LIPIcs.SoCG.2020.18">10.4230/LIPIcs.SoCG.2020.18</a>.</p>
 </div>
-<div id="ref-Oleynik2020" class="csl-entry">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">A. Oleynik, M. I. García-Ibáñez, N. Blaser, A. Omar, and G. Alendal, <span>“Optimal sensors placement for detecting <span>CO2</span> discharges from unknown locations on the seafloor,”</span> <em>International Journal of Greenhouse Gas Control</em>, vol. 95, p. 102951, 2020, doi: <a href="https://doi.org/10.1016/j.ijggc.2019.102951">10.1016/j.ijggc.2019.102951</a>.</div>
+<div id="ref-Oleynik2020">
+<p>[10] A. Oleynik, M. I. García-Ibáñez, N. Blaser, A. Omar, and G. Alendal, “Optimal sensors placement for detecting CO2 discharges from unknown locations on the seafloor,” <em>International Journal of Greenhouse Gas Control</em>, vol. 95, p. 102951, 2020, doi: <a href="https://doi.org/10.1016/j.ijggc.2019.102951">10.1016/j.ijggc.2019.102951</a>.</p>
 </div>
-<div id="ref-Bringelande2020_WO" class="csl-entry">
-<div class="csl-left-margin">[11] </div><div class="csl-right-inline">G. H. Bringeland, N. Blaser, K.-M. Myhr, C. A. Vedeler, and S. Gavasso, <span>“Wearing-off at the end of natalizumab dosing intervals is associated with low receptor occupancy,”</span> <em>Neurology - Neuroimmunology Neuroinflammation</em>, vol. 7, no. 3, 2020, doi: <a href="https://doi.org/10.1212/NXI.0000000000000678">10.1212/NXI.0000000000000678</a>.</div>
+<div id="ref-Bringelande2020_WO">
+<p>[11] G. H. Bringeland, N. Blaser, K.-M. Myhr, C. A. Vedeler, and S. Gavasso, “Wearing-off at the end of natalizumab dosing intervals is associated with low receptor occupancy,” <em>Neurology - Neuroimmunology Neuroinflammation</em>, vol. 7, no. 3, 2020, doi: <a href="https://doi.org/10.1212/NXI.0000000000000678">10.1212/NXI.0000000000000678</a>.</p>
 </div>
-<div id="ref-blaser2019_applied" class="csl-entry">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">N. Blaser and M. Brun, <span>“Sparse nerves in practice,”</span> in <em>Machine learning and knowledge extraction</em>, 2019, pp. 272–284, doi: <a href="https://doi.org/10.1007/978-3-030-29726-8_17">10.1007/978-3-030-29726-8_17</a>.</div>
+<div id="ref-blaser2019_applied">
+<p>[12] N. Blaser and M. Brun, “Sparse nerves in practice,” in <em>Machine learning and knowledge extraction</em>, 2019, pp. 272–284, doi: <a href="https://doi.org/10.1007/978-3-030-29726-8_17">10.1007/978-3-030-29726-8_17</a>.</p>
 </div>
-<div id="ref-Bader_2019_RA" class="csl-entry">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">L. Bader <em>et al.</em>, <span>“Candidate markers for stratification and classification in rheumatoid arthritis,”</span> <em>Frontiers in Immunology</em>, vol. 10, p. 1488, 2019, doi: <a href="https://doi.org/10.3389/fimmu.2019.01488">10.3389/fimmu.2019.01488</a>.</div>
+<div id="ref-Bader_2019_RA">
+<p>[13] L. Bader <em>et al.</em>, “Candidate markers for stratification and classification in rheumatoid arthritis,” <em>Frontiers in Immunology</em>, vol. 10, p. 1488, 2019, doi: <a href="https://doi.org/10.3389/fimmu.2019.01488">10.3389/fimmu.2019.01488</a>.</p>
 </div>
-<div id="ref-brun2019_sparse" class="csl-entry">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">M. Brun and N. Blaser, <span>“Sparse dowker nerves,”</span> <em>Journal of Applied and Computational Topology</em>, pp. 1–28, 2019, doi: <a href="https://doi.org/10.1007/s41468-019-00028-9">10.1007/s41468-019-00028-9</a>.</div>
+<div id="ref-brun2019_sparse">
+<p>[14] M. Brun and N. Blaser, “Sparse dowker nerves,” <em>Journal of Applied and Computational Topology</em>, pp. 1–28, 2019, doi: <a href="https://doi.org/10.1007/s41468-019-00028-9">10.1007/s41468-019-00028-9</a>.</p>
 </div>
-<div id="ref-Karina_kollevaag" class="csl-entry">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">K. Dale <em>et al.</em>, <span>“Contaminant accumulation and biological responses in atlantic cod (gadus morhua) caged at a capped waste disposal site in kollevåg, western norway,”</span> <em>Marine Environmental Research</em>, 2019, doi: <a href="https://doi.org/10.1016/j.marenvres.2019.02.003">10.1016/j.marenvres.2019.02.003</a>.</div>
+<div id="ref-Karina_kollevaag">
+<p>[15] K. Dale <em>et al.</em>, “Contaminant accumulation and biological responses in atlantic cod (gadus morhua) caged at a capped waste disposal site in kollevåg, western norway,” <em>Marine Environmental Research</em>, 2019, doi: <a href="https://doi.org/10.1016/j.marenvres.2019.02.003">10.1016/j.marenvres.2019.02.003</a>.</p>
 </div>
-<div id="ref-Gerd_2019_RO" class="csl-entry">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">G. H. Bringeland <em>et al.</em>, <span>“Optimization of receptor occupancy assays in mass cytometry: Standardization across channels with <span>QSC</span> beads,”</span> <em>Cytometry Part A</em>, 2019, doi: <a href="https://doi.org/10.1002/cyto.a.23723">10.1002/cyto.a.23723</a>.</div>
+<div id="ref-Gerd_2019_RO">
+<p>[16] G. H. Bringeland <em>et al.</em>, “Optimization of receptor occupancy assays in mass cytometry: Standardization across channels with QSC beads,” <em>Cytometry Part A</em>, 2019, doi: <a href="https://doi.org/10.1002/cyto.a.23723">10.1002/cyto.a.23723</a>.</p>
 </div>
-<div id="ref-kareem_2018" class="csl-entry">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">K. E. M. Ahmed <em>et al.</em>, <span>“An <span>LC-MS/MS</span> approach to reveal the effects of <span>POP</span>s and endocrine disruptors on the steroidogenesis of the human <span>H295R</span> adrenocortical cell line,”</span> <em>Chemosphere</em>, 2019, doi: <a href="https://doi.org/10.1016/j.chemosphere.2018.11.057">10.1016/j.chemosphere.2018.11.057</a>.</div>
+<div id="ref-kareem_2018">
+<p>[17] K. E. M. Ahmed <em>et al.</em>, “An LC-MS/MS approach to reveal the effects of POPs and endocrine disruptors on the steroidogenesis of the human H295R adrenocortical cell line,” <em>Chemosphere</em>, 2019, doi: <a href="https://doi.org/10.1016/j.chemosphere.2018.11.057">10.1016/j.chemosphere.2018.11.057</a>.</p>
 </div>
-<div id="ref-froysa_2018_model_reduction" class="csl-entry">
-<div class="csl-left-margin">[18] </div><div class="csl-right-inline">H. G. Frøysa, S. Fallahi, and N. Blaser, <span>“Evaluating model reduction under parameter uncertainty,”</span> <em>BMC Systems Biology</em>, vol. 12, no. 1, p. 79, 2018, doi: <a href="https://doi.org/10.1186/s12918-018-0602-x">10.1186/s12918-018-0602-x</a>.</div>
+<div id="ref-froysa_2018_model_reduction">
+<p>[18] H. G. Frøysa, S. Fallahi, and N. Blaser, “Evaluating model reduction under parameter uncertainty,” <em>BMC Systems Biology</em>, vol. 12, no. 1, p. 79, 2018, doi: <a href="https://doi.org/10.1186/s12918-018-0602-x">10.1186/s12918-018-0602-x</a>.</p>
 </div>
-<div id="ref-blaser_2018_dc" class="csl-entry">
-<div class="csl-left-margin">[19] </div><div class="csl-right-inline">N. Blaser and M. Brun, <span>“Divisive cover,”</span> <em>Mathematics in Computer Science</em>, vol. 13, no. 1, pp. 21–29, 2019, doi: <a href="https://doi.org/10.1007/s11786-018-0352-6">10.1007/s11786-018-0352-6</a>.</div>
+<div id="ref-blaser_2018_dc">
+<p>[19] N. Blaser and M. Brun, “Divisive cover,” <em>Mathematics in Computer Science</em>, vol. 13, no. 1, pp. 21–29, 2019, doi: <a href="https://doi.org/10.1007/s11786-018-0352-6">10.1007/s11786-018-0352-6</a>.</p>
 </div>
-<div id="ref-yadetie_2018_EE2_BaP" class="csl-entry">
-<div class="csl-left-margin">[20] </div><div class="csl-right-inline">F. Yadetie <em>et al.</em>, <span>“<span>RNA</span>-seq analysis of transcriptome responses in atlantic cod (gadus morhua) precision-cut liver slices exposed to benzo[a]pyrene and 17-<span><span></span></span>-ethynylestradiol,”</span> <em>Aquatic Toxicology</em>, vol. 201, pp. 174–186, 2018, doi: <a href="https://doi.org/10.1016/j.aquatox.2018.06.003">10.1016/j.aquatox.2018.06.003</a>.</div>
+<div id="ref-yadetie_2018_EE2_BaP">
+<p>[20] F. Yadetie <em>et al.</em>, “RNA-seq analysis of transcriptome responses in atlantic cod (gadus morhua) precision-cut liver slices exposed to benzo[a]pyrene and 17--ethynylestradiol,” <em>Aquatic Toxicology</em>, vol. 201, pp. 174–186, 2018, doi: <a href="https://doi.org/10.1016/j.aquatox.2018.06.003">10.1016/j.aquatox.2018.06.003</a>.</p>
 </div>
-<div id="ref-estill_2018_transmission_malawi" class="csl-entry">
-<div class="csl-left-margin">[21] </div><div class="csl-right-inline">J. Estill <em>et al.</em>, <span>“The effect of monitoring viral load and tracing patients lost to follow-up on the course of the HIV epidemic in malawi: A mathematical model,”</span> <em>Open Forum Infectious Diseases</em>, vol. 5, no. 5, p. ofy092, 2018, doi: <a href="https://doi.org/10.1093/ofid/ofy092">10.1093/ofid/ofy092</a>.</div>
+<div id="ref-estill_2018_transmission_malawi">
+<p>[21] J. Estill <em>et al.</em>, “The effect of monitoring viral load and tracing patients lost to follow-up on the course of the hiv epidemic in malawi: A mathematical model,” <em>Open Forum Infectious Diseases</em>, vol. 5, no. 5, p. ofy092, 2018, doi: <a href="https://doi.org/10.1093/ofid/ofy092">10.1093/ofid/ofy092</a>.</p>
 </div>
-<div id="ref-blaser2017_ac" class="csl-entry">
-<div class="csl-left-margin">[22] </div><div class="csl-right-inline">N. Blaser <em>et al.</em>, <span>“<span>I</span>mpact of screening and <span>A</span><span>R</span><span>T</span> on anal cancer incidence in <span>H</span><span>I</span><span>V</span>-positive men who have sex with men: Mathematical modeling study,”</span> <em><span>AIDS</span></em>, 2017, doi: <a href="https://doi.org/10.1097/QAD.0000000000001546">10.1097/QAD.0000000000001546</a>.</div>
+<div id="ref-blaser2017_ac">
+<p>[22] N. Blaser <em>et al.</em>, “Impact of screening and ART on anal cancer incidence in HIV-positive men who have sex with men: Mathematical modeling study,” <em>AIDS</em>, 2017, doi: <a href="https://doi.org/10.1097/QAD.0000000000001546">10.1097/QAD.0000000000001546</a>.</p>
 </div>
-<div id="ref-estill2016_2nd" class="csl-entry">
-<div class="csl-left-margin">[23] </div><div class="csl-right-inline">J. Estill <em>et al.</em>, <span>“Estimating the need of second-line antiretroviral therapy in sub-<span>S</span>aharan <span>A</span>frica up to 2030: A mathematical model,”</span> <em><span>The Lancet HIV</span></em>, vol. 3, no. 3, pp. e132–e139, 2016, doi: <a href="https://doi.org/10.1016/S2352-3018(16)00016-3">10.1016/S2352-3018(16)00016-3</a>.</div>
+<div id="ref-estill2016_2nd">
+<p>[23] J. Estill <em>et al.</em>, “Estimating the need of second-line antiretroviral therapy in sub-Saharan Africa up to 2030: A mathematical model,” <em>The Lancet HIV</em>, vol. 3, no. 3, pp. e132–e139, 2016, doi: <a href="https://doi.org/10.1016/S2352-3018(16)00016-3">10.1016/S2352-3018(16)00016-3</a>.</p>
 </div>
-<div id="ref-blaser2016_tb" class="csl-entry">
-<div class="csl-left-margin">[24] </div><div class="csl-right-inline">N. Blaser <em>et al.</em>, <span>“Tuberculosis in cape town: An age-structured transmission model,”</span> <em><span>Epidemics</span></em>, vol. 14, pp. 54–61, 2016, doi: <a href="https://doi.org/10.1016/j.epidem.2015.10.001">10.1016/j.epidem.2015.10.001</a>.</div>
+<div id="ref-blaser2016_tb">
+<p>[24] N. Blaser <em>et al.</em>, “Tuberculosis in cape town: An age-structured transmission model,” <em>Epidemics</em>, vol. 14, pp. 54–61, 2016, doi: <a href="https://doi.org/10.1016/j.epidem.2015.10.001">10.1016/j.epidem.2015.10.001</a>.</p>
 </div>
-<div id="ref-estill2015" class="csl-entry">
-<div class="csl-left-margin">[25] </div><div class="csl-right-inline">J. Estill, L. Salazar-Vizcaya, N. Blaser, M. Egger, and O. Keiser, <span>“The <span>Cost</span>-<span>Effectiveness</span> of <span>Monitoring</span> <span>Strategies</span> for <span>Antiretroviral</span> <span>Therapy</span> of <span>HIV</span> <span>Infected</span> <span>Patients</span> in <span>Resource</span>-<span>Limited</span> <span>Settings</span>: <span>Software</span> <span>Tool</span>,”</span> <em><span>PLoS ONE</span></em>, vol. 10, no. 3, p. e0119299, 2015, doi: <a href="https://doi.org/10.1371/journal.pone.0119299">10.1371/journal.pone.0119299</a>.</div>
+<div id="ref-estill2015">
+<p>[25] J. Estill, L. Salazar-Vizcaya, N. Blaser, M. Egger, and O. Keiser, “The Cost-Effectiveness of Monitoring Strategies for Antiretroviral Therapy of HIV Infected Patients in Resource-Limited Settings: Software Tool,” <em>PLoS ONE</em>, vol. 10, no. 3, p. e0119299, 2015, doi: <a href="https://doi.org/10.1371/journal.pone.0119299">10.1371/journal.pone.0119299</a>.</p>
 </div>
-<div id="ref-blaser2015_gems" class="csl-entry">
-<div class="csl-left-margin">[26] </div><div class="csl-right-inline">N. Blaser <em>et al.</em>, <span>“<span class="nocase">gems</span>: An <span>R</span> package for simulating from disease progression models,”</span> <em><span>Journal of Statistical Software</span></em>, vol. 64, no. 10, pp. 1–22, 2015, doi: <a href="https://doi.org/10.18637/jss.v064.i10">10.18637/jss.v064.i10</a>.</div>
+<div id="ref-blaser2015_gems">
+<p>[26] N. Blaser <em>et al.</em>, “gems: An R package for simulating from disease progression models,” <em>Journal of Statistical Software</em>, vol. 64, no. 10, pp. 1–22, 2015, doi: <a href="https://doi.org/10.18637/jss.v064.i10">10.18637/jss.v064.i10</a>.</p>
 </div>
-<div id="ref-salazar-vizcaya_viral_2014" class="csl-entry">
-<div class="csl-left-margin">[27] </div><div class="csl-right-inline">L. Salazar-Vizcaya <em>et al.</em>, <span>“Viral load versus <span>CD</span><span class="math inline">\(4^{+}\)</span> monitoring and 5-year outcomes of antiretroviral therapy in <span>HIV</span>-positive children in <span>Southern Africa</span>: A cohort-based modelling study,”</span> <em><span>AIDS</span></em>, vol. 28, no. 16, pp. 2451–2460, 2014, doi: <a href="https://doi.org/10.1097/QAD.0000000000000446">10.1097/QAD.0000000000000446</a>.</div>
+<div id="ref-salazar-vizcaya_viral_2014">
+<p>[27] L. Salazar-Vizcaya <em>et al.</em>, “Viral load versus CD<span class="math inline">\(4^{+}\)</span> monitoring and 5-year outcomes of antiretroviral therapy in HIV-positive children in Southern Africa: A cohort-based modelling study,” <em>AIDS</em>, vol. 28, no. 16, pp. 2451–2460, 2014, doi: <a href="https://doi.org/10.1097/QAD.0000000000000446">10.1097/QAD.0000000000000446</a>.</p>
 </div>
-<div id="ref-petersen2014" class="csl-entry">
-<div class="csl-left-margin">[28] </div><div class="csl-right-inline">M. Petersen, J. Schwab, S. Gruber, N. Blaser, M. Schomaker, and M. van der Laan, <span>“Targeted maximum likelihood estimation for dynamic and static longitudinal marginal structural working models,”</span> <em><span>Journal of Causal Inference</span></em>, vol. 2, no. 2, pp. 147–185, 2014, doi: <a href="https://doi.org/10.1515/jci-2013-0007">10.1515/jci-2013-0007</a>.</div>
+<div id="ref-petersen2014">
+<p>[28] M. Petersen, J. Schwab, S. Gruber, N. Blaser, M. Schomaker, and M. van der Laan, “Targeted maximum likelihood estimation for dynamic and static longitudinal marginal structural working models,” <em>Journal of Causal Inference</em>, vol. 2, no. 2, pp. 147–185, 2014, doi: <a href="https://doi.org/10.1515/jci-2013-0007">10.1515/jci-2013-0007</a>.</p>
 </div>
-<div id="ref-blaser2014_vl" class="csl-entry">
-<div class="csl-left-margin">[29] </div><div class="csl-right-inline">N. Blaser <em>et al.</em>, <span>“Impact of viral load and the duration of primary infection on <span>HIV</span> transmission: Systematic review and meta-analysis,”</span> <em><span>AIDS</span></em>, vol. 28, no. 7, pp. 1021–1029, 2014, doi: <a href="https://doi.org/10.1097/QAD.0000000000000135">10.1097/QAD.0000000000000135</a>.</div>
+<div id="ref-blaser2014_vl">
+<p>[29] N. Blaser <em>et al.</em>, “Impact of viral load and the duration of primary infection on HIV transmission: Systematic review and meta-analysis,” <em>AIDS</em>, vol. 28, no. 7, pp. 1021–1029, 2014, doi: <a href="https://doi.org/10.1097/QAD.0000000000000135">10.1097/QAD.0000000000000135</a>.</p>
 </div>
-<div id="ref-estill2014_tracing" class="csl-entry">
-<div class="csl-left-margin">[30] </div><div class="csl-right-inline">J. Estill <em>et al.</em>, <span>“Tracing of patients lost to follow-up and <span>HIV</span> transmission: Mathematical modeling study based on 2 large <span>ART</span> programs in <span>Malawi</span>,”</span> <em><span>Journal of acquired immune deficiency syndromes</span></em>, vol. 65, no. 5, pp. e179–186, 2014, doi: <a href="https://doi.org/10.1097/QAI.0000000000000075">10.1097/QAI.0000000000000075</a>.</div>
+<div id="ref-estill2014_tracing">
+<p>[30] J. Estill <em>et al.</em>, “Tracing of patients lost to follow-up and HIV transmission: Mathematical modeling study based on 2 large ART programs in Malawi,” <em>Journal of acquired immune deficiency syndromes</em>, vol. 65, no. 5, pp. e179–186, 2014, doi: <a href="https://doi.org/10.1097/QAI.0000000000000075">10.1097/QAI.0000000000000075</a>.</p>
 </div>
-<div id="ref-keebler2014" class="csl-entry">
-<div class="csl-left-margin">[31] </div><div class="csl-right-inline">D. Keebler <em>et al.</em>, <span>“Cost-effectiveness of different strategies to monitor adults on antiretroviral treatment: A combined analysis of three mathematical models,”</span> <em><span>The Lancet Global Health</span></em>, vol. 2, no. 1, pp. e35–e43, 2014, doi: <a href="https://doi.org/10.1016/S2214-109X(13)70048-2">10.1016/S2214-109X(13)70048-2</a>.</div>
+<div id="ref-keebler2014">
+<p>[31] D. Keebler <em>et al.</em>, “Cost-effectiveness of different strategies to monitor adults on antiretroviral treatment: A combined analysis of three mathematical models,” <em>The Lancet Global Health</em>, vol. 2, no. 1, pp. e35–e43, 2014, doi: <a href="https://doi.org/10.1016/S2214-109X(13)70048-2">10.1016/S2214-109X(13)70048-2</a>.</p>
 </div>
-<div id="ref-estill2013_cost" class="csl-entry">
-<div class="csl-left-margin">[32] </div><div class="csl-right-inline">J. Estill <em>et al.</em>, <span>“Cost-effectiveness of point-of-care viral load monitoring of antiretroviral therapy in resource-limited settings: Mathematical modelling study,”</span> <em><span>AIDS</span></em>, vol. 27, no. 9, pp. 1483–1492, 2013, doi: <a href="https://doi.org/10.1097/QAD.0b013e328360a4e5">10.1097/QAD.0b013e328360a4e5</a>.</div>
+<div id="ref-estill2013_cost">
+<p>[32] J. Estill <em>et al.</em>, “Cost-effectiveness of point-of-care viral load monitoring of antiretroviral therapy in resource-limited settings: Mathematical modelling study,” <em>AIDS</em>, vol. 27, no. 9, pp. 1483–1492, 2013, doi: <a href="https://doi.org/10.1097/QAD.0b013e328360a4e5">10.1097/QAD.0b013e328360a4e5</a>.</p>
 </div>
-<div id="ref-wettstein2012" class="csl-entry">
-<div class="csl-left-margin">[33] </div><div class="csl-right-inline">C. Wettstein <em>et al.</em>, <span>“Missed opportunities to prevent mother-to-child-transmission: Systematic review and meta-analysis,”</span> <em><span>AIDS</span></em>, vol. 26, no. 18, pp. 2361–2373, 2012, doi: <a href="https://doi.org/10.1097/QAD.0b013e328359ab0c">10.1097/QAD.0b013e328359ab0c</a>.</div>
+<div id="ref-wettstein2012">
+<p>[33] C. Wettstein <em>et al.</em>, “Missed opportunities to prevent mother-to-child-transmission: Systematic review and meta-analysis,” <em>AIDS</em>, vol. 26, no. 18, pp. 2361–2373, 2012, doi: <a href="https://doi.org/10.1097/QAD.0b013e328359ab0c">10.1097/QAD.0b013e328359ab0c</a>.</p>
 </div>
 </div>
 </div>
