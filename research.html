@@ -309,15 +309,76 @@ $(document).ready(function () {
 
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var nav = '<em>Jump to: <a href="#interests">Interests</a> | <a href="#projects">Projects</a> | <a href="#preprints">Preprints</a> | <a href="#publications">Publications</a></em>';
+  document.querySelectorAll('div.page-nav').forEach(function(el) { el.innerHTML = nav; });
+});
+</script>
+<div class="page-nav">
+
+</div>
+<div id="interests" class="section level2">
+<h2>Interests</h2>
 <p>My current research is mainly focused on topological and geometric
 machine learning and its application in medicine and energy. Previously
 I have worked on topics ranging from epidemiology, toxicology and
 geopyhsics to statistics and topological data analysis.</p>
+<p>One important method in topological data analysis is persistent
+homology. The method consists of several steps: First, the data is
+translated into a (bi-)filtered simplicial complex. Starting from low
+filtration values, this filtered simplicial complex is then assembled,
+while keeping track of the components, holes and voids in the structure.
+In this way, we keep track of the features and the range of filtration
+values for which they exist, allowing for multi-scale analysis. Features
+that persist over large ranges of filtration values are called
+persistent features and thought to be important. For unsupervised
+machine learning, we can then visualize the persistence diagrams and
+localize some homology features. For supervised machine learning,
+persistence diagrams need to be transformed into a vector
+representation, before using standard supervised learning algorithms. My
+research spans from encoding of data into (bi-)filtered simplicial
+complexes (topological representation), approximations of filtered
+simplicial complexes (sparsification), localizing topological features,
+validation measures of unsupervised persistent homology, data
+benchmarks, efficient vector representations of persistent homology for
+supervised machine learning and applications of topological methods in
+the domains of biomedicine, geophysics and energy.</p>
+<p>Another important tool from topology are Reeb graphs, which can be
+used to characterize manifolds. Since manifold learning is an important
+but challenging part of machine learning, Reeb graph learning can
+contribute by capturing some of the important properties of the
+manifold. My research spans the following different aspects of Reeb
+graph learning: mathematical foundations, (probabilistic) learning
+algorithms, performance measures, metrics, visualization, downstream
+tasks such as dimensionality reduction or generative modelling and
+applications to different domains.</p>
+<p>Geometric deep learning provides a principled framework for designing
+neural networks that respect the symmetries of the underlying data
+domain. When data is defined on a structured space such as the sphere in
+the case of global atmospheric fields, incorporating the corresponding
+symmetry group as an inductive bias leads to more data-efficient and
+generalizable models. My research in this area spans the development of
+equivariant methods for previously unexplored domains and
+symmetries.</p>
+<p>In the context of machine learning applications I am interested in
+understanding how spatial structures and their change over time
+influence biology, energy systems, and epidemics. Some examples of
+previous research includes studying the spread of HIV, the effects of
+various toxins on fish development, and rapid treatment responses in
+leukemia.</p>
+<div class="page-nav">
+
+</div>
+</div>
 <div id="projects" class="section level2">
 <h2>Projects</h2>
 <p>I am currently involved in the following funded research
 projects:</p>
 <ul>
+<li><a
+href="https://www4.uib.no/en/research/research-centres/quantum-uib">Bergen
+Centre for Quantum Technology</a></li>
 <li><a href="https://www.uib.no/en/leadai">LEAD AI</a></li>
 <li><a
 href="https://www.uib.no/en/energyinformatics/176710/wind3d-project">Wind3D</a></li>
@@ -347,25 +408,35 @@ Databases to Evaluate AIDS Southern Africa collaboration
 antiretroviral therapy and transmission of HIV in Southern Africa:
 Mathematical model</a></li>
 </ul>
+<div class="page-nav">
+
+</div>
 <h2 id="preprints">Preprints</h2>
 <p>Below you find a list of preprints.</p>
-<p>[1] M. Blørstad, H. J. Mostein, N. Blaser, and P. Parviainen,
+<p>[1] J. S. Schmidt, M. Carrasco, E. Röell, G. Wolf, N. Blaser, and B.
+Rieck, “No triangulation without representation: Generalization in
+topological deep learning.” 2026, url:
+<a href="https://arxiv.org/abs/2605.06467">https://arxiv.org/abs/2605.06467</a>.</p>
+<p>[2] M. Blørstad, H. J. Mostein, N. Blaser, and P. Parviainen,
 “Evaluating prediction uncertainty estimates from BatchEnsemble.” 2026,
 url: <a href="https://arxiv.org/abs/2601.21581">https://arxiv.org/abs/2601.21581</a>.</p>
-<p>[2] H. B. Bjerkevik, N. Blaser, and L. M. Salbu, “Reeb graph of sample
+<p>[3] H. B. Bjerkevik, N. Blaser, and L. M. Salbu, “Reeb graph of sample
 thickenings.” 2025, url: <a href="https://arxiv.org/abs/2512.08159">https://arxiv.org/abs/2512.08159</a>.</p>
-<p>[3] S. Gavasso <em>et al.</em>, “High-dimensional immune profiling following
+<p>[4] S. Gavasso <em>et al.</em>, “High-dimensional immune profiling following
 autologous hematopoietic stem cell transplantation in
 relapsing-remitting multiple sclerosis,” 2025, doi:
 <a href="https://doi.org/10.1101/2025.07.01.662494">10.1101/2025.07.01.662494</a>.</p>
-<p>[4] M. H. Hannisdal <em>et al.</em>, “Spatial-temporal recurrence patterns of
+<p>[5] M. H. Hannisdal <em>et al.</em>, “Spatial-temporal recurrence patterns of
 grade 4 glioma using deep learning integrated mpMRI and molecular
 pathology: A multi-centre observational study,” 2025, doi:
 <a href="http://dx.doi.org/10.2139/ssrn.5177606">http://dx.doi.org/10.2139/ssrn.5177606</a>.</p>
-<p>[5] F. Ballerin, N. Blaser, and E. Grong, “SO(3)-equivariant neural
+<p>[6] F. Ballerin, N. Blaser, and E. Grong, “SO(3)-equivariant neural
 networks for learning from scalar and vector fields on spheres.” 2025,
 url: <a href="https://arxiv.org/abs/2503.09456">https://arxiv.org/abs/2503.09456</a>.</p>
 
+<div class="page-nav">
+
+</div>
 <h2 id="publications">Publications</h2>
 <p>Below you find a list of peer-reviewed publications.</p>
 <p>[1] N. Blaser, M. Brun, O. H. Gardaa, and L. M. Salbu, “Monoidal Rips:

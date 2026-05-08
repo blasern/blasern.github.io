@@ -1,9 +1,25 @@
+body {
+  text-align: justify;
+}
+
+.page-nav {
+  text-align: right;
+  font-size: 0.85em;
+  color: #888;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: left;
+}
+
+.container {
+  max-width: 900px;
+}
+
 /*----------------NAVBAR ---------------*/
 .navbar-default {
     background-color: #DBD7D2;
 }
-
-
 
 .navbar-default .navbar-nav>.open>a, 
 .navbar-default .navbar-nav>.active>a, 
