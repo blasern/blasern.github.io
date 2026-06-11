@@ -309,11 +309,96 @@ $(document).ready(function () {
 
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<script>window.pubKeywords = [["tda"],["ml"],["ml","gdl"],["tda"],["tda","alg"],["alg"],["ml"],["tda","alg"],["alg"],["biomed"],["biomed","ml"],["biomed","ml"],["tda","alg"],["tda","alg"],["biomed"],["ml","energy"],["ml","energy"],["tda"],["ml","energy"],["tda","alg"],["energy"],["biomed"],["tda"],["biomed","ml"],["tda"],["biomed"],["biomed"],["biomed"],["biomed","ml"],["tda"],["biomed"],["biomed"],["biomed"],["biomed"],["biomed"],["biomed"],["biomed"],["biomed"],["biomed"],["biomed","ml"],["biomed"],["biomed"],["biomed"],["biomed"],["biomed"]];
+window.preprintKeywords = [["tda","ml","gdl"],["tda","ml","gdl"],["ml"],["tda"],["biomed"],["ml","biomed"],["ml","gdl"]];
+window.pubImages = ["images/blaser2026monoidal.svg","images/Grefsrud_2026.svg","images/gardaa2025rotatouille.svg","images/blaser2025core.svg","images/vaagset2025homology.svg","images/Sam2025.svg","images/blorstad2024stable.svg","images/vaagset2024mbc.svg","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""];
+window.preprintImages = ["images/blaser2026encodingeulercharacteristictransform.svg","images/schmidt2026triangulationrepresentationgeneralizationtopological.svg","images/blorstad2026.svg","images/bjerkevik2025.svg","images/Gavasso2025.svg","images/Hannisdal2025braincancer.svg","images/ballerin2025so3.svg"];</script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var nav = '<em>Jump to: <a href="#interests">Interests</a> | <a href="#projects">Projects</a> | <a href="#preprints">Preprints</a> | <a href="#publications">Publications</a></em>';
   document.querySelectorAll('div.page-nav').forEach(function(el) { el.innerHTML = nav; });
 });
+</script>
+<script>
+(function () {
+  var tagLabels = {
+    alg:          'Algorithms', 
+    tda:          'Topological Data Analysis',
+    ml:           'Machine Learning',
+    gdl:          'Geometric Deep Learning', 
+    biomed:       'Biomedical',
+    energy:       'Energy'
+  };
+
+  function initFilter(containerId, keywords, images) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+
+    var entries = Array.from(container.querySelectorAll('p'))
+      .filter(function (p) { return /^\[\d+\]/.test(p.textContent.trim()); });
+
+    entries.forEach(function (p, i) {
+      if (keywords[i] && keywords[i].length)
+        p.dataset.keywords = keywords[i].join(' ');
+      if (images && images[i]) {
+        var img = document.createElement('img');
+        img.src = images[i];
+        img.alt = '';
+        img.className = 'pub-thumb';
+        p.classList.add('has-thumb');
+        p.insertBefore(img, p.firstChild);
+      }
+    });
+
+    var allTags = [];
+    keywords.forEach(function (kws) {
+      kws.forEach(function (k) { if (allTags.indexOf(k) === -1) allTags.push(k); });
+    });
+    allTags.sort();
+    if (!allTags.length) return;
+
+    var filterDiv = document.createElement('div');
+    filterDiv.className = 'pub-filter';
+
+    var label = document.createElement('span');
+    label.className = 'filter-label';
+    label.textContent = 'Filter: ';
+    filterDiv.appendChild(label);
+
+    var activeTags = [];
+
+    function updateFilter() {
+      entries.forEach(function (p) {
+        if (!activeTags.length) { p.style.display = ''; return; }
+        var kws = (p.dataset.keywords || '').split(' ');
+        var show = activeTags.some(function (t) { return kws.indexOf(t) !== -1; });
+        p.style.display = show ? '' : 'none';
+      });
+    }
+
+    allTags.forEach(function (tag) {
+      var btn = document.createElement('button');
+      btn.className = 'pub-tag-btn';
+      btn.textContent = tagLabels[tag] || tag;
+      btn.dataset.tag = tag;
+      btn.addEventListener('click', function () {
+        var idx = activeTags.indexOf(tag);
+        if (idx !== -1) { activeTags.splice(idx, 1); btn.classList.remove('active'); }
+        else            { activeTags.push(tag);       btn.classList.add('active');    }
+        updateFilter();
+      });
+      filterDiv.appendChild(btn);
+    });
+
+    var firstEntry = entries[0];
+    if (firstEntry) firstEntry.parentNode.insertBefore(filterDiv, firstEntry);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.pubKeywords)      initFilter('pub-list',      window.pubKeywords,      window.pubImages);
+    if (window.preprintKeywords) initFilter('preprint-list', window.preprintKeywords, window.preprintImages);
+  });
+})();
 </script>
 <div class="page-nav">
 
@@ -343,7 +428,7 @@ simplicial complexes (sparsification), localizing topological features,
 validation measures of unsupervised persistent homology, data
 benchmarks, efficient vector representations of persistent homology for
 supervised machine learning and applications of topological methods in
-the domains of biomedicine, geophysics and energy.</p>
+the domains of biomedicine and energy.</p>
 <p>Another important tool from topology are Reeb graphs, which can be
 used to characterize manifolds. Since manifold learning is an important
 but challenging part of machine learning, Reeb graph learning can
@@ -411,33 +496,36 @@ Mathematical model</a></li>
 <div class="page-nav">
 
 </div>
-<h2 id="preprints">Preprints</h2>
+<div id="preprint-list"><h2 id="preprints">Preprints</h2>
 <p>Below you find a list of preprints.</p>
-<p>[1] J. S. Schmidt, M. Carrasco, E. Röell, G. Wolf, N. Blaser, and B.
+<p>[1] N. Blaser, O. H. Gardaa, L. M. Salbu, E. X. Wang, and B. Rieck,
+“Encoding the euler characteristic transform.” 2026, url:
+<a href="https://arxiv.org/abs/2606.10824">https://arxiv.org/abs/2606.10824</a>.</p>
+<p>[2] J. S. Schmidt, M. Carrasco, E. Röell, G. Wolf, N. Blaser, and B.
 Rieck, “No triangulation without representation: Generalization in
 topological deep learning.” 2026, url:
 <a href="https://arxiv.org/abs/2605.06467">https://arxiv.org/abs/2605.06467</a>.</p>
-<p>[2] M. Blørstad, H. J. Mostein, N. Blaser, and P. Parviainen,
+<p>[3] M. Blørstad, H. J. Mostein, N. Blaser, and P. Parviainen,
 “Evaluating prediction uncertainty estimates from BatchEnsemble.” 2026,
 url: <a href="https://arxiv.org/abs/2601.21581">https://arxiv.org/abs/2601.21581</a>.</p>
-<p>[3] H. B. Bjerkevik, N. Blaser, and L. M. Salbu, “Reeb graph of sample
+<p>[4] H. B. Bjerkevik, N. Blaser, and L. M. Salbu, “Reeb graph of sample
 thickenings.” 2025, url: <a href="https://arxiv.org/abs/2512.08159">https://arxiv.org/abs/2512.08159</a>.</p>
-<p>[4] S. Gavasso <em>et al.</em>, “High-dimensional immune profiling following
+<p>[5] S. Gavasso <em>et al.</em>, “High-dimensional immune profiling following
 autologous hematopoietic stem cell transplantation in
 relapsing-remitting multiple sclerosis,” 2025, doi:
 <a href="https://doi.org/10.1101/2025.07.01.662494">10.1101/2025.07.01.662494</a>.</p>
-<p>[5] M. H. Hannisdal <em>et al.</em>, “Spatial-temporal recurrence patterns of
+<p>[6] M. H. Hannisdal <em>et al.</em>, “Spatial-temporal recurrence patterns of
 grade 4 glioma using deep learning integrated mpMRI and molecular
 pathology: A multi-centre observational study,” 2025, doi:
 <a href="http://dx.doi.org/10.2139/ssrn.5177606">http://dx.doi.org/10.2139/ssrn.5177606</a>.</p>
-<p>[6] F. Ballerin, N. Blaser, and E. Grong, “SO(3)-equivariant neural
+<p>[7] F. Ballerin, N. Blaser, and E. Grong, “SO(3)-equivariant neural
 networks for learning from scalar and vector fields on spheres.” 2025,
 url: <a href="https://arxiv.org/abs/2503.09456">https://arxiv.org/abs/2503.09456</a>.</p>
-
+</div>
 <div class="page-nav">
 
 </div>
-<h2 id="publications">Publications</h2>
+<div id="pub-list"><h2 id="publications">Publications</h2>
 <p>Below you find a list of peer-reviewed publications.</p>
 <p>[1] N. Blaser, M. Brun, O. H. Gardaa, and L. M. Salbu, “Monoidal Rips:
 Stable multiparameter filtrations of directed networks,” <em>Journal of
@@ -636,7 +724,7 @@ Mathematical modelling study,” <em>AIDS</em>, vol. 27, no. 9, pp. 1483–1492,
 mother-to-child-transmission: Systematic review and meta-analysis,”
 <em>AIDS</em>, vol. 26, no. 18, pp. 2361–2373, 2012, doi:
 <a href="https://doi.org/10.1097/QAD.0b013e328359ab0c">10.1097/QAD.0b013e328359ab0c</a>.</p>
-
+</div>
 </div>
 
 <script type="text/javascript" src="links.js"></script>

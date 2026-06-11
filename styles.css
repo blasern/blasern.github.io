@@ -37,6 +37,63 @@ a.dropdown-toggle:hover {
     background-color: #202831f2;
   }
 
+/*---------------- Publication thumbnails ---------------*/
+/* Small image on the left of a publication entry, named after its
+   bibtex key (images/<key>.svg). Only entries with a matching image
+   get a thumbnail. */
+.pub-thumb {
+  float: left;
+  width: 96px;
+  max-height: 96px;
+  height: auto;
+  margin: 0.15em 1em 0.25em 0;
+  object-fit: contain;
+}
+
+/* Contain the float so short entries don't overlap the next one. */
+#pub-list p.has-thumb,
+#preprint-list p.has-thumb {
+  overflow: hidden;
+  min-height: 96px;
+}
+
+/*---------------- Publication filter ---------------*/
+.pub-filter {
+  margin: 0.8em 0 1.2em;
+  text-align: left;
+}
+
+.filter-label {
+  font-style: italic;
+  color: #888;
+  margin-right: 0.4em;
+  font-size: 0.9em;
+}
+
+.pub-tag-btn {
+  margin: 0.15em 0.25em 0.15em 0;
+  padding: 0.15em 0.65em;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 0.85em;
+  line-height: 1.6;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.pub-tag-btn:hover {
+  background: #DBD7D2;
+  border-color: #888;
+}
+
+.pub-tag-btn.active {
+  background: #202831;
+  color: #fff;
+  border-color: #202831;
+}
+
+/*---------------- Navbar Links when hovered ---------------*/
 /* Navbar Links when hovered*/
 .navbar-default .dropdown-menu>.active>a
 .navbar-default .navbar-nav>.active>a:hover, 
